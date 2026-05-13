@@ -18,6 +18,7 @@ import { Toaster } from '@/components/ui/toast'
 import { OnboardingTour } from '@/components/onboarding/onboarding-tour'
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal'
 import { UpdateCenterNotifier } from '@/components/update-center-notifier'
+import { OpenComputerProfileSwapListener } from '@/components/opencomputer-profile-swap-listener'
 import { initializeSettingsAppearance } from '@/hooks/use-settings'
 import { useApplyChatWidth } from '@/hooks/use-chat-settings'
 import {
@@ -382,6 +383,7 @@ function RootLayout() {
           {!isGameSurfaceRoute ? <UsageMeter /> : null}
           {!isHermesWorldLandingRoute ? <KeyboardShortcutsModal /> : null}
           {!isHermesWorldLandingRoute ? <UpdateCenterNotifier /> : null}
+          <OpenComputerProfileSwapListener />
           {rootSurfaceState.showPostOnboardingOverlays && !isGameSurfaceRoute ? (
             <>
               <MobilePromptTrigger />
